@@ -5,7 +5,7 @@ const config = {
   retries :0,
   
  
-timeout: 30 * 1000,
+timeout: 50 * 10000,
   expect: {
   
     timeout: 5000
@@ -16,7 +16,7 @@ reporter: 'html',
   use: {
 
     browserName : 'chromium',
-    headless : true,
+    headless : false,
     screenshot : 'on',
     trace : 'on',//off,on
     

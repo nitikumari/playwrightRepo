@@ -1,0 +1,19 @@
+{
+    "firstname": "Niti",
+    "lastName": "K",
+    "address": "280 Spencer Street",
+    "city": "Melbourne",
+    "state": "VIC",
+    "zipCode": "3000",
+    "PhoneNumber": "041111111",
+    "ssn": "12345",
+    "password": "NS12334",
+    "confirmPassword": "NS12334",
+    "accountForPayBill": "12344",
+    "amount": "10",
+    "payee":"Niti",
+    "account":"12345",
+    "verifyAccount":"12345"
+  
+ 
+}
