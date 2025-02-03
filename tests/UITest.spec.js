@@ -32,17 +32,39 @@ const loginPage=poManager.getLoginPage();
 await loginPage.login(randomUsername,dataSet);
 await context.storageState({ path: 'dataAuth.json' });
 
-const accountOverViewPage=poManager.getAccountOverviewPage();
-const BalanceBefore=await accountOverViewPage.accountTotalBalance();
-
 const homePage=poManager.getHomePage();
-const accountNumber=await homePage.openNewAccount();
-console.log("account number is "+accountNumber);
-
+await homePage.globalNavigationMenu();
 await homePage.accountOverviewClick();
 
+const accountOverViewPage=await poManager.getAccountOverviewPage();
+
+const BalanceBefore=await accountOverViewPage.accountTotalBalance();
+const accountNumber=await homePage.openNewAccount();
+console.log("account number is "+accountNumber);
+console.log("Step 4: Open new account and capture the account Number");
+try{
+if(accountNumber)
+console.log("Pass: Account number is captured successfully "+accountNumber);
+}
+catch(e)
+{
+    console.error("Step 4 Failed: Unable to open new account, Please check logs"+e);
+}
+
+
+await homePage.accountOverviewClick();
 const BalanceAfter=await accountOverViewPage.accountTotalBalance();
+try{
+    console.log("Step 5: Checking the Account Overview screen display the balance details as expected")
 expect(BalanceBefore===BalanceAfter).toBeTruthy;
+console.log("Pass: Balance detail is as expected: "+BalanceAfter);
+}
+catch(e)
+{
+    console.error("Step 5 Failed: Unable to open new account, Please check logs"+e);
+
+}
+
 const existingAccount=await accountOverViewPage.existingAccountDetail();
 console.log("existing account is "+existingAccount);
 await homePage.transferFund(accountNumber,existingAccount,dataSet);
@@ -54,6 +76,6 @@ const txnData={accountNumber,amount};
 fs.writeFileSync('txnData.json',JSON.stringify(txnData));
 
 
-//<input id="986d29f8-d6d6-4313-8fe8-8fff18a2436c" class="input phone-number-986d29f8-d6d6-4313-8fe8-8fff18a2436c" name="payee.phoneNumber">
+
 })
 

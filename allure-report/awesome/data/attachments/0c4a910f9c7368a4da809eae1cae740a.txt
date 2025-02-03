@@ -1,0 +1,19 @@
+user_iMmopLsj
+Scenario 1: Step1: Navigate to Para Bank Application and validate the title of the page
+Pass: Navigation to Para Bank is successful
+Step2: Verify user is register successfully
+Pass: user_iMmopLsjis registered successfully
+Step 3: Global Navigation Menu is working as expected
+Pass: Global Navigation menu is working as expected
+Account number is 45201
+account number is 45201
+Step 4: Open new account and capture the account Number
+Pass: Account number is captured successfully 45201
+Step 5: Checking the Account Overview screen display the balance details as expected
+Pass: Balance detail is as expected: $600.00
+existing account is 45090
+Step 6: Verify Transafer fund is successful
+Pass: transfer fund is successful from account : 45201
+Transfer fund To account 45090
+Step 7: Pay Bill
+Pass: Pay bill completed

@@ -1,0 +1,7 @@
+user_SMLb80Vj
+Scenario 1: Step1: Navigate to Para Bank Application and validate the title of the page
+Pass: Navigation to Para Bank is successful
+Step2: Verify user is register successfully
+Pass: user_SMLb80Vjis registered successfully
+Step 3: Global Navigation Menu is working as expected
+Pass: Global Navigation menu is working as expected

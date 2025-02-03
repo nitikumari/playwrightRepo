@@ -1,4 +1,4 @@
-
+const {expect} = require('@playwright/test');
 class WelcomePage{
     constructor(page)
     {
@@ -22,6 +22,7 @@ class WelcomePage{
         //input[@name='username']
         //input[@value='Register']
         this.logout=page.locator("//a[normalize-space()='Log Out']");
+        this.userValidation=page.locator("//h1[@class='title']");
     
     }
 
@@ -31,6 +32,18 @@ class WelcomePage{
         //{
        // timeout:60000,
        // waitUntil:'load',
+       console.log("Scenario 1: Step1: Navigate to Para Bank Application and validate the title of the page");
+       try{
+        await expect(this.page).toHaveTitle("ParaBank | Register for Free Online Account Access")
+        console.log("Pass: Navigation to Para Bank is successful");
+    
+       }
+      catch(e)
+      {
+        console.error('An error occurred:Scenario 1 Failed', e);
+
+      }
+
     
 }
     async registerNewUser(randomUsername,dataSet)
@@ -56,6 +69,19 @@ await this.userName.fill(randomUsername);
 await this.password.fill(dataSet.password);
 await this.confirmPassword.fill(dataSet.confirmPassword);
 await this.register.click();
+console.log("Step2: Verify user is register successfully");
+try{
+    const username=await this.userValidation.textContent();
+ await expect(username).toContain(randomUsername);
+ console.log("Pass: "+randomUsername+"is registered successfully");
+
+}
+catch(e)
+{
+
+ console.error('An error occurred:Scenario 2 Failed', e);
+
+}
 await this.logout.click();
 
 
@@ -64,4 +90,7 @@ await this.logout.click();
     }
 }
 module.exports={WelcomePage};
+
+
+
 

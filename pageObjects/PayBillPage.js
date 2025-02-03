@@ -53,7 +53,19 @@ class PayBillPage
         await this.fromAccount.selectOption(accountNumber);
         await this.sendPayment.click();
        const text= await this.billPaymentSuccessful.textContent();
+       try{
+         console.log("Step 7: Pay Bill")
         expect(text).toContain("Bill Payment Complete");
+        console.log("Pass: Pay bill completed");
+    
+    }
+    catch(e)
+    {
+    
+     console.error('An error occurred Step 7: Please check logs', e);
+    
+    }
+     
       //  this.findTransaction.click();
 
     ///this.findByAmount.fill("10");

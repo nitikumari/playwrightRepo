@@ -17,7 +17,15 @@ class LoginPage{
         await this.userNameLogin.fill(randomUsername);
     await this.passWordLogin.fill(dataSet.password);
         await this.loginIn.click();
+       // console.log("Validating the user Name ");
+
+  //await expect(page).toHaveTitle(/Playwright/);
     }
 
 }
 module.exports={LoginPage};
+
+//div[@id='footermainPanel']//ul[1]//li[2]//a[1]
+
+//h1[@class='title']
+//ParaSoft Demo Website//

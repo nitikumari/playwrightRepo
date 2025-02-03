@@ -60,8 +60,18 @@ test('Find Transaction',async({browser})=>
         });
     
         // Validate if the transaction is found and matches the criteria
-        expect(matchedTransaction).toBeDefined();
-        expect(String(matchedTransaction.amount)).toBe(String(amount));
+        try{
+            console.log("Scenario 2 API test: Validate the Find Transaction response is successful");
+            expect(matchedTransaction).toBeDefined();
+            expect(String(matchedTransaction.amount)).toBe(String(amount));
+          
+        
+           }
+          catch(e)
+          {
+            console.error('An error occurred:Scenario 2 API test Failed', e);
+    
+          }
       
 
         

@@ -8,10 +8,12 @@ class AccountOverViewPage
         this.total=page.locator("//b[normalize-space()='Total']");
         this.balance=page.locator("//b[normalize-space()='Total']/parent::td/following-sibling::td/b");
         this.existingAccountNumber=this.page.locator("//table[1]/tbody[1]/tr[1]/td[1]/a[1]");
+        this.accountOverViewLink=this.page.locator("//a[normalize-space()='Accounts Overview']");
 
     }
     async accountTotalBalance()
     {
+       
         const Balance =await this.balance.textContent();
         return Balance;
 

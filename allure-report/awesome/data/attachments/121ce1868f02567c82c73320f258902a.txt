@@ -1,0 +1,14 @@
+Searching for transaction: Account Number - 44535, Amount - 10
+Response Status: 200
+Response Headers: {"date":"Mon, 03 Feb 2025 02:21:47 GMT","content-type":"application/json","transfer-encoding":"chunked","connection":"keep-alive","cf-cache-status":"DYNAMIC","x-content-type-options":"nosniff","server":"cloudflare","cf-ray":"90bef3121d81f0d5-MEL","content-encoding":"br"}
+Response Data: [
+  {
+    id: 52438,
+    accountId: 44535,
+    type: 'Debit',
+    date: 1738540800000,
+    amount: 10,
+    description: 'Funds Transfer Sent'
+  }
+]
+Scenario 2 API test: Validate the Find Transaction response is successful
